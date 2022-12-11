@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kg (kilogram) to Lbs (pound) Converter</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="/dist/output.css" rel="stylesheet" />
+
+    <!-- MathJax -->
+
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+      };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+    ></script>
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <header class="p-1 md:p-3 lg:p-7">
+      <!-- Green container -->
+      <div class="bg-primary-500 px-2 pb-3 md:pb-10 rounded-[3px]">
+        <div class="max-w-[937px] mx-auto md:mr-auto">
+          <div
+            class="flex items-center justify-between max-w-md md:max-w-none mx-auto"
+          >
+            <div class="py-5">
+              <a
+                class="flex items-center justify-center md:justify-start max-w-max mx-auto md:ml-0 md:mr-auto"
+                href="https://kgtolbs.com"
+              >
+                <img
+                  src="https://kgtolbs.com/assets/img/logo.svg"
+                  alt="KGtoLBS Logo"
+                  class="mr-1"
+                />
+                <strong>KG</strong>to<strong>LBS</strong>.com
+              </a>
+            </div>
+
+            <!-- Dark/Light mode toggle -->
+            <div
+              id="color-theme-toggle-button"
+              class="cursor-pointer flex items-center h-8 w-14 rounded-full bg-white dark:bg-dark-800 px-1"
+            >
+              <button
+                id="current-mode-shower"
+                class="h-[26px] w-[26px] flex items-center justify-center rounded-full bg-gray-300 dark:bg-dark-700 text-gray-800 dark:text-dark-200 transition-transform duration-500"
+              ></button>
+            </div>
+          </div>
+
+          <div class="md:flex">
+            <div>
+              <h1
+                class="mt-5 md:mt-20 text-center md:text-left text-[30px] tracking-tight leading-8 font-quicksand font-semibold text-primary-900"
+              >
+                Convert kilograms into <br />
+                pounds quickly.
+              </h1>
+              <p
+                class="mt-4 text-center md:text-left text-[15px] text-primary-900"
+              >
+                Easily enter your kilogram weight and instantly <br />
+                get the result in pounds.
+              </p>
+            </div>
+
+            <div
+              class="mt-6 max-w-md mx-auto md:ml-auto md:mr-0 bg-white dark:bg-dark-900 border-t-4 border-primary-700 rounded"
+            >
+              <div class="border-b dark:border-b-dark-800 border-gray-300">
+                <p class="p-6 text-gray-400 text-center text-[15px]">
+                  You can also press the arrow so you can select other weight
+                  units that you could convert.
+                </p>
+              </div>
+
+              <div class="p-6">
+                <p class="text-gray-400">100 (kg) kilograms is equal to</p>
+                <span class="text-xl dark:text-dark-100"
+                  >220.463 (lb) pounds
+                </span>
+
+                <!-- Weight Converter -->
+                <div
+                  class="mt-6 w-full max-w-full flex items-start justify-between"
+                >
+                  <!-- KG -->
+                  <div>
+                    <div class="relative">
+                      <input
+                        type="text"
+                        placeholder="100"
+                        class="w-full max-w-[150px] h-[44px] rounded border border-gray-300 focus:outline-none focus:ring-1 hover:ring-primary-500 focus:ring-primary-500 focus-within:ring-primary-500 pl-[10px]"
+                      />
+                      <select
+                        class="absolute inset-y-0 right-1.5 my-auto border border-gray-300 h-8 rounded-sm text-xs focus:outline-none"
+                        id="from-weight"
+                      >
+                        <option value="mg">mg</option>
+                        <option value="gm">gm</option>
+                        <option value="kg" selected="">kg</option>
+                        <option value="Mg">Mg</option>
+                        <option value="dr">dr</option>
+                        <option value="oz">oz</option>
+                        <option value="lb">lb</option>
+                        <option value="st">st</option>
+                        <option value="qr">qr</option>
+                        <option value="cw">cw</option>
+                        <option value="ton">ton</option>
+                      </select>
+                    </div>
+                    <span class="text-[10px] text-gray-400"
+                      >1 kg = 2.20462262</span
+                    >
+                  </div>
+
+                  <!-- Switch -->
+                  <div class="mt-1 h-10 w-10 grow-1 shrink-0">
+                    <button class="text-white dark:text-dark-900">
+                      <svg
+                        width="36px"
+                        height="36px"
+                        viewBox="0 0 36 36"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+                        <title>Switch</title>
+                        <desc>Created with Sketch.</desc>
+                        <g
+                          id="Page-1"
+                          stroke="none"
+                          stroke-width="1"
+                          fill="none"
+                          fill-rule="evenodd"
+                        >
+                          <g
+                            id="Desktop-HD"
+                            transform="translate(-962.000000, -291.000000)"
+                          >
+                            <g
+                              id="Group"
+                              transform="translate(770.000000, 128.000000)"
+                            >
+                              <g
+                                id="Group-7"
+                                transform="translate(193.000000, 164.000000)"
+                              >
+                                <rect
+                                  id="Rectangle-Copy-2"
+                                  fill="currentColor"
+                                  x="0"
+                                  y="0"
+                                  width="34"
+                                  height="34"
+                                  rx="17"
+                                  class="stroke-gray-300 dark:stroke-dark-800"
+                                ></rect>
+                                <polyline
+                                  id="Path"
+                                  stroke="#A3A3A3"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  points="13 12 9 15 25 15"
+                                ></polyline>
+                                <polyline
+                                  id="Path-Copy"
+                                  stroke="#A3A3A3"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  transform="translate(17.000000, 20.500000) scale(-1, -1) translate(-17.000000, -20.500000) "
+                                  points="13 19 9 22 25 22"
+                                ></polyline>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                    </button>
+                  </div>
+
+                  <!-- LBS -->
+                  <div>
+                    <div class="relative">
+                      <input
+                        type="text"
+                        placeholder="100"
+                        class="w-full max-w-[150px] h-[44px] rounded border border-gray-300 focus:outline-none focus:ring-1 hover:ring-primary-500 focus:ring-primary-500 focus-within:ring-primary-500 pl-[10px]"
+                      />
+                      <select
+                        class="absolute inset-y-0 right-1.5 my-auto border border-gray-300 h-8 rounded-sm text-xs focus:outline-none"
+                        id="from-weight"
+                      >
+                        <option value="mg">mg</option>
+                        <option value="gm">gm</option>
+                        <option value="kg">kg</option>
+                        <option value="Mg">Mg</option>
+                        <option value="dr">dr</option>
+                        <option value="oz">oz</option>
+                        <option value="lb" selected="">lb</option>
+                        <option value="st">st</option>
+                        <option value="qr">qr</option>
+                        <option value="cw">cw</option>
+                        <option value="ton">ton</option>
+                      </select>
+                    </div>
+                    <span class="text-[10px] text-gray-400"
+                      >1 lb = 0.45359237 kg
+                    </span>
+                  </div>
+                </div>
+
+                <button
+                  class="block max-w-max mx-auto mt-4 text-center uppercase text-[13px] text-primary-500"
+                >
+                  Copy result
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main
+      class="max-w-[937px] mx-auto md:max-w-xl lg:max-w-[937px] lg:flex lg:justify-between lg:gap-12"
+    >
+      <div class="lg:flex-1 lg:max-w-[34rem]">
+        <!-- Conversion -->
+        <div class="p-1.5 lg:p-0 mt-3">
+          <h2 class="mb-2 font-roboto-mono text-gray-400 text-sm">
+            Conversion
+          </h2>
+          <p class="text-[22px] leading-7 text-gray-500">
+            <strong class="text-primary-900 dark:text-gray-300">100</strong>
+            kilograms (kg) to pounds (lb).
+          </p>
+          <p class="mt-2 text-[22px] leading-7 text-gray-500">
+            <strong class="text-primary-900 dark:text-gray-300">100</strong>
+            kilograms (kg) converts to 220.463 pounds (lb).
+          </p>
+        </div>
+
+        <!-- Also Converts To -->
+        <div class="p-1.5 lg:p-0 mt-3 md:mt-6">
+          <h2 class="mb-4 font-roboto-mono text-gray-400 text-sm">
+            Also Converts To
+          </h2>
+
+          <!-- Conversion list -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="border dark:border-dark-800 rounded text-center p-4">
+              <h3 class="font-roboto-mono font-black text-sm text-gray-400/80">
+                100 kilograms (kg)
+              </h3>
+              <h1
+                class="my-1 font-quicksand text-[20px] font-semibold text-primary-800 dark:text-gray-300"
+              >
+                56438.4
+              </h1>
+              <h2
+                class="font-quicksand text-lg text-gray-500 dark:text-dark-400 font-semibold"
+              >
+                dram (dr)
+              </h2>
+            </div>
+
+            <div class="border dark:border-dark-800 rounded text-center p-4">
+              <h3 class="font-roboto-mono font-black text-sm text-gray-400/80">
+                100 kilograms (kg)
+              </h3>
+              <h1
+                class="my-1 font-quicksand text-[20px] font-semibold text-primary-800 dark:text-gray-300"
+              >
+                56438.4
+              </h1>
+              <h2
+                class="font-quicksand text-lg text-gray-500 dark:text-dark-400 font-semibold"
+              >
+                ounce (oz)
+              </h2>
+            </div>
+
+            <div class="border dark:border-dark-800 rounded text-center p-4">
+              <h3 class="font-roboto-mono font-black text-sm text-gray-400/80">
+                100 kilograms (kg)
+              </h3>
+              <h1
+                class="my-1 font-quicksand text-[20px] font-semibold text-primary-800 dark:text-gray-300"
+              >
+                56438.4
+              </h1>
+              <h2
+                class="font-quicksand text-lg text-gray-500 dark:text-dark-400 font-semibold"
+              >
+                pounds (lb)
+              </h2>
+            </div>
+
+            <div class="border dark:border-dark-800 rounded text-center p-4">
+              <h3 class="font-roboto-mono font-black text-sm text-gray-400/80">
+                100 kilograms (kg)
+              </h3>
+              <h1
+                class="my-1 font-quicksand text-[20px] font-semibold text-primary-800 dark:text-gray-300"
+              >
+                56438.4
+              </h1>
+              <h2
+                class="font-quicksand text-lg text-gray-500 dark:text-dark-400 font-semibold"
+              >
+                dark (st)
+              </h2>
+            </div>
+
+            <div class="border dark:border-dark-800 rounded text-center p-4">
+              <h3 class="font-roboto-mono font-black text-sm text-gray-400/80">
+                100 kilograms (kg)
+              </h3>
+              <h1
+                class="my-1 font-quicksand text-[20px] font-semibold text-primary-800 dark:text-gray-300"
+              >
+                56438.4
+              </h1>
+              <h2
+                class="font-quicksand text-lg text-gray-500 dark:text-dark-400 font-semibold"
+              >
+                quarter (qr)
+              </h2>
+            </div>
+
+            <div class="border dark:border-dark-800 rounded text-center p-4">
+              <h3 class="font-roboto-mono font-black text-sm text-gray-400/80">
+                100 kilograms (kg)
+              </h3>
+              <h1
+                class="my-1 font-quicksand text-[20px] font-semibold text-primary-800 dark:text-gray-300"
+              >
+                56438.4
+              </h1>
+              <h2
+                class="font-quicksand text-lg text-gray-500 dark:text-dark-400 font-semibold"
+              >
+                hundredweigth (cwt)
+              </h2>
+            </div>
+
+            <div class="border dark:border-dark-800 rounded text-center p-4">
+              <h3 class="font-roboto-mono font-black text-sm text-gray-400/80">
+                100 kilograms (kg)
+              </h3>
+              <h1
+                class="my-1 font-quicksand text-[20px] font-semibold text-primary-800 dark:text-gray-300"
+              >
+                56438.4
+              </h1>
+              <h2
+                class="font-quicksand text-lg text-gray-500 dark:text-dark-400 font-semibold"
+              >
+                ton (ton)
+              </h2>
+            </div>
+
+            <div class="border dark:border-dark-800 rounded text-center p-4">
+              <h3 class="font-roboto-mono font-black text-sm text-gray-400/80">
+                100 kilograms (kg)
+              </h3>
+              <h1
+                class="my-1 font-quicksand text-[20px] font-semibold text-primary-800 dark:text-gray-300"
+              >
+                56438.4
+              </h1>
+              <h2
+                class="font-quicksand text-lg text-gray-500 dark:text-dark-400 font-semibold"
+              >
+                milligram (mg)
+              </h2>
+            </div>
+
+            <div class="border dark:border-dark-800 rounded text-center p-4">
+              <h3 class="font-roboto-mono font-black text-sm text-gray-400/80">
+                100 kilograms (kg)
+              </h3>
+              <h1
+                class="my-1 font-quicksand text-[20px] font-semibold text-primary-800 dark:text-gray-300"
+              >
+                56438.4
+              </h1>
+              <h2
+                class="font-quicksand text-lg text-gray-500 dark:text-dark-400 font-semibold"
+              >
+                gram (gm)
+              </h2>
+            </div>
+
+            <div class="border dark:border-dark-800 rounded text-center p-4">
+              <h3 class="font-roboto-mono font-black text-sm text-gray-400/80">
+                100 kilograms (kg)
+              </h3>
+              <h1
+                class="my-1 font-quicksand text-[20px] font-semibold text-primary-800 dark:text-gray-300"
+              >
+                56438.4
+              </h1>
+              <h2
+                class="font-quicksand text-lg text-gray-500 dark:text-dark-400 font-semibold"
+              >
+                kilograms (kg)
+              </h2>
+            </div>
+
+            <div class="border dark:border-dark-800 rounded text-center p-4">
+              <h3 class="font-roboto-mono font-black text-sm text-gray-400/80">
+                100 kilograms (kg)
+              </h3>
+              <h1
+                class="my-1 font-quicksand text-[20px] font-semibold text-primary-800 dark:text-gray-300"
+              >
+                56438.4
+              </h1>
+              <h2
+                class="font-quicksand text-lg text-gray-500 dark:text-dark-400 font-semibold"
+              >
+                tonne (Mg)
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formula -->
+        <div class="mt-10 p-2 lg:p-0">
+          <h2
+            class="font-quicksand text-[22px] font-semibold text-primary-900 dark:text-dark-300"
+          >
+            The Formula
+          </h2>
+          <div
+            class="mt-4 text-gray-400 border dark:border-dark-700 rounded text-center p-8 bg-gray-50/50 dark:bg-dark-800"
+          >
+            $220.463lb = 100kg ∗ 2.2046$
+          </div>
+        </div>
+
+        <!-- The Kilogram -->
+        <div class="mt-5 p-2 lg:p-0">
+          <h2
+            class="font-quicksand text-[22px] font-semibold text-primary-900 dark:text-dark-300"
+          >
+            The Kilogram
+          </h2>
+          <p
+            class="mt-2 text-primary-900 dark:text-dark-400 text-[15px] leading-7"
+          >
+            The kilogram or kilogramme (symbol: kg) is the base unit of mass in
+            the International System of Units (SI). Until 20 May 2019, it
+            remains defined by a platinum alloy cylinder, the International
+            Prototype Kilogram (informally Le Grand K or IPK), manufactured in
+            1889, and carefully stored in Saint-Cloud, a suburb of Paris. After
+            20 May, it will be defined in terms of fundamental physical
+            constants. KG to LBS
+          </p>
+          <div class="mt-3.5">
+            <span class="text-gray-400 text-[13px]"
+              >Source:
+              <a
+                href="https://en.wikipedia.org/wiki/Kilogram"
+                class="text-blue-500"
+                >Wikipedia</a
+              ></span
+            >
+          </div>
+        </div>
+
+        <!-- The Pound -->
+        <div class="mt-5 p-2 lg:p-0">
+          <h2
+            class="font-quicksand text-[22px] font-semibold text-primary-900 dark:text-dark-300"
+          >
+            The Pound
+          </h2>
+          <p
+            class="mt-2 text-primary-900 dark:text-dark-400 text-[15px] leading-7"
+          >
+            The pound or pound-mass is a unit of mass used in the imperial,
+            United States customary and other systems of measurement. Various
+            definitions have been used; the most common today is the
+            international avoirdupois pound, which is legally defined as exactly
+            0.45359237 kilograms, and which is divided into 16 avoirdupois
+            ounces. The international standard symbol for the avoirdupois pound
+            is lb; an alternative symbol is lbm (for most pound definitions), #
+            (chiefly in the U.S.), and ℔ or (specifically for the apothecaries'
+            pound).
+          </p>
+          <div class="mt-3.5">
+            <span class="text-gray-400 text-[13px]"
+              >Source:
+              <a
+                href="https://en.wikipedia.org/wiki/Pound_(mass)"
+                class="text-blue-500"
+                >Wikipedia</a
+              ></span
+            >
+          </div>
+        </div>
+      </div>
+
+      <aside class="">
+        <!-- Quick conversions -->
+        <div class="w-full mt-3 p-2 lg:p-0">
+          <h2
+            class="text-center font-quicksand text-[22px] font-semibold text-primary-900 dark:text-dark-300"
+          >
+            Quick Conversions
+          </h2>
+          <table class="mt-2 w-full font-roboto-mono text-center">
+            <thead class="border-b dark:border-b-dark-800">
+              <tr class="font-black text-gray-400">
+                <th class="py-2">Kilogram (kg)</th>
+                <th class="py-2">Pounds (lbs)</th>
+              </tr>
+            </thead>
+            <tbody
+              class="py-10 text-[15px] text-primary-900 dark:text-dark-400 leading-10"
+            >
+              <tr>
+                <td class="py-2"></td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="/convert/kg/lb/1">1 kg</a>
+                </td>
+                <td>
+                  <a href="/convert/lb/kg/2.2046"> 2.2046 lbs </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="/convert/kg/lb/2">2 kg</a>
+                </td>
+                <td>
+                  <a href="/convert/lb/kg/2.2046"> 4.4092 lbs </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="/convert/kg/lb/3">3 kg</a>
+                </td>
+                <td>
+                  <a href="/convert/lb/kg/2.2046"> 6.6139 lbs </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="/convert/kg/lb/4">4 kg</a>
+                </td>
+                <td>
+                  <a href="/convert/lb/kg/2.2046"> 8.8185 lbs</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="/convert/kg/lb/5">5 kg</a>
+                </td>
+                <td>
+                  <a href="/convert/lb/kg/2.2046"> 11.0231 lbs</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="/convert/kg/lb/6">6 kg</a>
+                </td>
+                <td>
+                  <a href="/convert/lb/kg/2.2046"> 13.2277 lbs </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="/convert/kg/lb/7">7 kg</a>
+                </td>
+                <td>
+                  <a href="/convert/lb/kg/2.2046"> 15.4324 lbs</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="/convert/kg/lb/8">8 kg</a>
+                </td>
+                <td>
+                  <a href="/convert/lb/kg/2.2046"> 17.637 lbs </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="/convert/kg/lb/9">9 kg</a>
+                </td>
+                <td>
+                  <a href="/convert/lb/kg/2.2046"> 19.8416 lbs </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="/convert/kg/lb/10">10 kg</a>
+                </td>
+                <td>
+                  <a href="/convert/lb/kg/2.2046"> 22.0462 lbs </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="/convert/kg/lb/100">100 kg</a>
+                </td>
+                <td>
+                  <a href="/convert/lb/kg/2.2046"> 220.46226 lbs</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="/convert/kg/lb/500">500 kg</a>
+                </td>
+                <td>
+                  <a href="/convert/lb/kg/2.2046"> 2204.6226 lbs </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="/convert/kg/lb/1000">1000 kg</a>
+                </td>
+                <td>
+                  <a href="/convert/lb/kg/2.2046"> 2.2046 lbs </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Latest Searches -->
+        <div class="mt-6 p-2 lg:p-0">
+          <h2
+            class="text-center font-quicksand text-[22px] font-semibold text-primary-900 dark:text-dark-300"
+          >
+            Latest Searches
+          </h2>
+
+          <div class="text-center text-[15px]">
+            <p class="mt-2 text-gray-400 font-roboto-mono">
+              <span class="text-primary-900 dark:text-dark-100">18</span>
+              pounds (lb) to kilograms (kg)
+            </p>
+            <p class="mt-2 text-gray-400 font-roboto-mono">
+              <span class="text-primary-900 dark:text-dark-100">18</span>
+              pounds (lb) to kilograms (kg)
+            </p>
+            <p class="mt-2 text-gray-400 font-roboto-mono">
+              <span class="text-primary-900 dark:text-dark-100">18</span>
+              pounds (lb) to kilograms (kg)
+            </p>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer
+      class="mt-10 w-full border-t dark:border-t-dark-800 py-8 px-8 lg:px-0"
+    >
+      <div class="max-w-[937px] mx-auto sm:flex sm:justify-between">
+        <div class="flex justify-center dark:text-dark-100">
+          <a class="flex items-center mx-auto" href="https://kgtolbs.com"
+            ><img
+              src="https://kgtolbs.com/assets/img/logo.svg"
+              alt="KGtoLBS.com"
+              class="mr-1"
+            />
+            <strong>KG</strong>to<strong>LBS</strong>.com</a
+          >
+        </div>
+        <div class="mt-4 flex items-center justify-center gap-4">
+          <a
+            class="underline text-primary-900 dark:text-dark-300 text-[15px]"
+            href="/privacy-policy"
+            >Privacy Policy</a
+          >
+          <a
+            class="underline text-primary-900 dark:text-dark-300 text-[15px]"
+            href="/sitemap"
+            >Sitemap</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

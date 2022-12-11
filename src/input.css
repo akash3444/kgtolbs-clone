@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-inter;
+  }
+  body {
+    @apply dark:bg-dark-900 transition-colors duration-200;
+  }
+}
